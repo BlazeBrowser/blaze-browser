@@ -1,0 +1,250 @@
+#browser_levelcase{
+  background:rgb(42,49,53);
+}
+
+#browser_firstlevel {
+  width: 100%;
+  height: 32px;
+  padding:4px;
+  -webkit-user-select: none;
+  overflow: hidden;
+  position: relative;
+  z-index: 8000;
+  vertical-align:middle;
+}
+
+#browser_firstlevel *{
+  vertical-align:middle;
+}
+
+#browser_secondlevel {
+  -webkit-app-region: no-drag;
+  background: linear-gradient(180deg, rgba(248, 248, 248, 1) 0%, rgba(238, 238, 238, 1) 100%);
+  width: 100%;
+  height:28px;
+  padding-top:5px;
+  padding-bottom:5px;
+  position: relative;
+  z-index: 7000;
+  vertical-align:middle;
+}
+
+#browser_secondlevel *{
+  vertical-align:middle;
+}
+
+#browser_thirdlevel {
+  -webkit-app-region: no-drag;
+  width: 100%;
+  position: relative;
+  z-index: 6000;
+  background:rgba(242,242,242,0.95);
+  border-bottom:1px solid rgb(187,187,187)
+}
+
+#browser_levelcase{
+  -webkit-app-region: drag;
+  width: 100%;
+  position: relative;
+  z-index: 6000;
+}
+
+#browser_firstlevel_left{
+  display:inline-block;
+  float: left;
+}
+#browser_firstlevel_center{
+  width:100%;
+  overflow-x:scroll;
+  overflow-y:hidden;
+  display:inline-block;
+  float: left;
+}
+
+#browser_firstlevel_center::-webkit-scrollbar {
+    display: none;
+}
+
+#browser_firstlevel_right{
+  display:inline-block;
+  float: left;
+  text-align:right;
+}
+
+#browser_secondlevel_left{
+  display:inline-block;
+  float: left;
+  padding-left:5px;
+}
+#browser_secondlevel_center{
+  width:100%;
+  overflow: hidden;
+  display:inline-block;
+  float: left;
+}
+#browser_secondlevel_right{
+  display:inline-block;
+  float: right;
+  padding-right:5px;
+  text-align:right;
+}
+
+.browser_controls{
+  line-height: 8px;
+	padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+	text-align: left;
+  display:inline-block;
+}
+
+#browser_firstlevel_left .browser_controls{
+  margin-right: 20px;
+  margin-left:3px;
+}
+
+#browser_firstlevel_right .browser_controls{
+  margin-left: 20px;
+  margin-right:3px;
+}
+
+.browser_close{
+	width: 12px;
+	height: 12px;
+	border-radius: 15px;
+	background: rgb(252, 99, 94);
+	margin-right: 4px;
+  margin-left: 4px;
+	display: inline-block;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+body.windows .browser_close{
+  border-radius: 3px;
+  height:22px;
+  width:22px;
+  margin-top: -5px;
+}
+
+.browser_close:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.browser_minimize {
+	width: 12px;
+	height: 12px;
+	border-radius: 15px;
+	background: rgb(253, 190, 65);
+  margin-right: 4px;
+  margin-left: 4px;
+	display: inline-block;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+body.windows .browser_minimize{
+  border-radius: 3px;
+  height:22px;
+  width:22px;
+  margin-top: -5px;
+}
+
+.browser_minimize:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.browser_maximize {
+	width: 12px;
+	height: 12px;
+	border-radius: 15px;
+	background: rgb(53, 204, 75);
+  margin-right: 4px;
+  margin-left: 4px;
+	display: inline-block;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+body.windows .browser_maximize{
+  border-radius: 3px;
+  height:22px;
+  width:22px;
+  margin-top: -5px;
+}
+
+.browser_maximize:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#browser_webview_overlay{
+
+}
+
+#browser_webview_overlay .case{
+  background: rgba(255, 255, 255, 0.31);
+  z-index: 95000;
+  position: fixed;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#browser_webview_overlay .case .frame{
+  max-width: 800px;
+  margin: 0px auto;
+  padding:10px;
+  margin-bottom: 10px;
+  background: rgba(242,242,242,0.98);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#browser_webview_overlay .case .frame .bubble{
+  border-radius: 3px;
+  background:rgb(255,255,255);
+  padding:10px;
+  margin-bottom:10px;
+}
+
+#browser_webview_overlay .case .close{
+  display: block;
+  position: absolute;
+  top: 0px;
+  z-index: -5;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 10px;
+  background: rgba(231,76,60,0);
+}
+
+#browser_webview_statusbar{
+  z-index: 96000;
+  position: fixed;
+  left: 0px;
+  bottom:0px;
+  width:100%;
+}
+#browser_webview_statusbar .case {
+	margin:0px auto;
+  margin-bottom:0px;
+	text-align: center;
+	max-width: 400px;
+	padding: 8px;
+  font-size:10px;
+	border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+	color:#ffffff;
+  text-overflow: ellipsis;
+  overflow:hidden;
+  background:rgba(22, 22, 22, 0.8);
+  backdrop-filter: blur(3px);
+}
+
+#browser_webview_statusbar .case:hover {
+	background:rgba(242,242,242,0.8);
+}

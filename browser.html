@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/browser.css">
+    <link rel="stylesheet" href="./css/browser_notifications.css">
+    <link rel="stylesheet" href="./css/browser_window.css">
+    <link rel="stylesheet" href="./css/browser_window_navagation.css">
+    <link rel="stylesheet" href="./css/browser_window_tabs.css">
+    <script src="./browser.js"></script>
+    <script src="./browser_startup.js"></script>
+    <script src="./browser_sync.js"></script>
+    <script src="./browser_preferences.js"></script>
+    <script src="./browser_search.js"></script>
+    <script src="./browser_get.js"></script>
+    <script src="./browser_render_layout.js"></script>
+    <script src="./browser_render_notification.js"></script>
+    <script src="./browser_render_preferences.js"></script>
+    <script src="./browser_render_menu.js"></script>
+    <script src="./browser_render_navagation.js"></script>
+    <script src="./browser_render_pageinfo.js"></script>
+    <script src="./browser_render_tabs.js"></script>
+    <script src="./browser_render_urlbar.js"></script>
+    <script src="./browser_tab.js"></script>
+    <script src="./browser_tab_control.js"></script>
+    <script src="./browser_tab_get.js"></script>
+    <script src="./browser_tab_update.js"></script>
+    <script src="./browser_ui.js"></script>
+
+    <script>
+      if (remote==undefined){
+        const {remote} = require('electron');
+      }
+      reports_version=remote.getGlobal('storage_settings')["version"];
+
+      //Send in error reports
+      window.addEventListener('error', function(event){
+        send_message=encodeURIComponent(event.message);
+        send_url=encodeURIComponent(event.filename);
+        send_linenumber=encodeURIComponent(event.lineno);
+        send_version=encodeURIComponent(reports_version);
+        var xhr = new XMLHttpRequest();
+      	xhr.open('GET', "https://blazebrowser.com/api/create_browser_report?version=" + send_version + "&url=" + send_url + "&message=" + send_message + "&line=" + send_linenumber + "", true);
+      	xhr.timeout = 2000;
+      	xhr.onload = function(e){
+      		if (xhr.status === 200){
+      			var data = xhr.responseText;
+      			//data was sent in
+      		}
+      	};
+      	xhr.onerror = function (e) {
+      		//Failed
+          console.log(e);
+      	};
+      	xhr.ontimeout = function () {
+      		//Timed out
+      	};
+      	xhr.send();
+      });
+    </script>
+  <body id="browser_body">
+    <div id="browser_levelcase">
+      <div id="browser_firstlevel">
+        <div id="browser_firstlevel_left">
+        </div>
+        <div id="browser_firstlevel_center">
+          <div id="browser_tabs_container"></div>
+        </div>
+        <div id="browser_firstlevel_right">
+        </div>
+      </div>
+      <div id="browser_secondlevel">
+        <div id="browser_secondlevel_left">
+          <div id="browser_navagation_container"></div>
+          <div id="browser_tabswitcher_container"></div>
+        </div>
+        <div id="browser_secondlevel_center">
+          <div id="browser_addressbar">
+            <div id="browser_pageinfo_container"></div>
+            <input id="location" type="text" style="max-width:100%;color:rgb(0,0,0);background:rgb(255,255,255);margin-top: 0px;line-height: 22px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;margin-bottom: 0px;border:0px solid rgba(22,22,22,0.1);" value="https://www.blazebrowser.com/" placeholder="Search everything..." onfocus="browser_render_urlbar_full()">
+          </div>
+        </div>
+        <div id="browser_secondlevel_right">
+          <div id="browser_menu_container">
+          </div>
+        </div>
+      </div>
+      <div id="browser_thirdlevel">
+      </div>
+    </div>
+    <div id="browser_webview_notifications"></div>
+    <div id="browser_webview_statusbar"></div>
+    <div id="browser_webview_overlay"></div>
+    <div id="browser_webview_container"></div>
+  </body>
+</html>

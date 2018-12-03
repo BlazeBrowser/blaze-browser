@@ -1,0 +1,163 @@
+#browser_tabs_container{
+  display:inline-block;
+  width: 100%;
+  width: calc(100% - 8px);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#browser_tabs_container .tab_container{
+  max-width:220px;
+  display:inline-block;
+}
+
+#browser_tabs_container .tab{
+  -webkit-app-region: no-drag;
+  transition: all 0.3s ease;
+  padding:7px;
+  border-radius:7px;
+  text-align:left;
+  margin-right:2px;
+  margin-left:2px;
+  margin-bottom: 9px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  height:16px;
+  line-height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  border:1px solid rgba(42,49,53,0);
+  color:rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 248, 248, 0.7) 100%);
+  -webkit-app-region: no-drag;
+  backdrop-filter: blur(3px);
+}
+
+#browser_tabs_container .tab .close{
+  float: right;
+  display: none;
+  border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    z-index: 50;
+    position: relative;
+    margin-top: -19px;
+    margin-right: -2px;
+    margin-bottom: -20px;
+    background-color: rgb(255,255,255);
+    background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M-0.707107 6.29289C-1.09763 6.68342 -1.09763 7.31658 -0.707107 7.70711C-0.316583 8.09763 0.316583 8.09763 0.707107 7.70711L-0.707107 6.29289ZM7.70711 0.707107C8.09763 0.316583 8.09763 -0.316583 7.70711 -0.707107C7.31658 -1.09763 6.68342 -1.09763 6.29289 -0.707107L7.70711 0.707107ZM0.707107 -0.707107C0.316583 -1.09763 -0.316583 -1.09763 -0.707107 -0.707107C-1.09763 -0.316583 -1.09763 0.316583 -0.707107 0.707107L0.707107 -0.707107ZM6.29289 7.70711C6.68342 8.09763 7.31658 8.09763 7.70711 7.70711C8.09763 7.31658 8.09763 6.68342 7.70711 6.29289L6.29289 7.70711ZM0.707107 7.70711L7.70711 0.707107L6.29289 -0.707107L-0.707107 6.29289L0.707107 7.70711ZM-0.707107 0.707107L6.29289 7.70711L7.70711 6.29289L0.707107 -0.707107L-0.707107 0.707107Z" transform="translate(2.5 2.5)" fill="#686868"/></svg>');
+    background-size: cover;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+#browser_tabs_container .tab:hover .close{
+  display:block;
+}
+
+#browser_tabs_container .tab .close:hover{
+  background-color:rgb(207,207,207);
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M-0.707107 6.29289C-1.09763 6.68342 -1.09763 7.31658 -0.707107 7.70711C-0.316583 8.09763 0.316583 8.09763 0.707107 7.70711L-0.707107 6.29289ZM7.70711 0.707107C8.09763 0.316583 8.09763 -0.316583 7.70711 -0.707107C7.31658 -1.09763 6.68342 -1.09763 6.29289 -0.707107L7.70711 0.707107ZM0.707107 -0.707107C0.316583 -1.09763 -0.316583 -1.09763 -0.707107 -0.707107C-1.09763 -0.316583 -1.09763 0.316583 -0.707107 0.707107L0.707107 -0.707107ZM6.29289 7.70711C6.68342 8.09763 7.31658 8.09763 7.70711 7.70711C8.09763 7.31658 8.09763 6.68342 7.70711 6.29289L6.29289 7.70711ZM0.707107 7.70711L7.70711 0.707107L6.29289 -0.707107L-0.707107 6.29289L0.707107 7.70711ZM-0.707107 0.707107L6.29289 7.70711L7.70711 6.29289L0.707107 -0.707107L-0.707107 0.707107Z" transform="translate(2.5 2.5)" fill="#343434"/></svg>');
+}
+
+#browser_tabs_container .tab .title{
+  overflow: hidden;
+  float: left;
+  width: calc(100% - 25px);
+  text-overflow: ellipsis;
+}
+
+#browser_tabs_container .tab .edge_left, #browser_tabs_container .tab .edge_right{
+  display:none;
+}
+
+#browser_tabs_container .tab.active{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+  color:rgb(0,0,0);
+  border:1px solid rgba(242,242,242,0);
+  border-bottom:1px solid rgba(248, 248, 248, 1);
+  padding-bottom:11px;
+  padding-top: 7px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-bottom: 5px;
+  backdrop-filter: none;
+}
+
+#browser_tabs_container .tab.active .edge_left{
+  display: block;
+  float: left;
+  z-index: 1;
+  position: relative;
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  margin-left: -18px;
+  margin-top: 18px;
+}
+
+#browser_tabs_container .tab.active .edge_right{
+  display: block;
+  float: right;
+  z-index: 1;
+  position: relative;
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  margin-right: -18px;
+  margin-top: 18px;
+}
+
+#browser_tabs_container .tab.active:hover .edge_right{
+  margin-top: 1px;
+}
+
+#browser_tabs_container .tab:hover{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+}
+
+#browser_tabs_container .tab.active:hover{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+}
+
+#browser_tabs_container .tab a{
+  color:#555555;
+}
+
+#browser_tabs_container .tab .icon{
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  margin-left:1px;
+  margin-right: 5px;
+  float: left;
+}
+
+#browser_tabs_new{
+  display:inline-block;
+  border-radius:7px;
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-top: -14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow:hidden;
+  vertical-align: middle;
+  height:28px;
+  width:28px;
+  background-color:rgba(255, 255, 255, 0.6);
+  background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAErSURBVFhH7Zg9SgNBGEC3ME0KS9Ol8AAL+8Nuum3MDSSCgpUIeg5zC8Eqd0iXLmmSG8TCUkRsBQ36Fr4iDBPZ8JndLb4HD0Lmm8xjCGFJYBh7kCRJV162izAMT4ib4iaO4zccyVI7IOwJf7b8xL4sNw83tnYCS89luXkIfHEDee9SlpvHArVYoBYL1GKBWmoNzPO8x4dPcI3PFf1yA/HVM+eV2WUURReS8DdsmDkH1SLnfuNAMvxkWXbs21yjY0nxUxTFEUMfzqba5AbvJGU3DF4z6PtOHdoFVnsiT9P0lMgrvK3ou3NYeRuPzswubzjvjD0dOf7/4RD7HVRhgVosUIsFarFALcSs3EAcynLzEDgiaLMVNy+fjGS5HRA5wAe8J7Cd/xMaxt4EwS8Rj/C1aZ8q7gAAAABJRU5ErkJggg==");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-app-region: no-drag;
+  backdrop-filter: blur(3px);
+}
+
+#browser_tabs_new:hover{
+  background-color:rgba(255,255,255,0.95);
+}
