@@ -70,13 +70,13 @@ function browser_startup_wifi_check(){
 var browser_startup_update_check_alerts=0;
 function browser_startup_update_check(){
   var timecode=Date.now();
-  getJSON("https://downloads.blazebrowser.com/source/" + storage_settings["version_branch"] + "/version.json?version=" + timecode + "", function(err, response){
+  getJSON("https://raw.githubusercontent.com/BlazeBrowser/blaze-browser/" + storage_settings["version_branch"] + "/version.json?version=" + timecode + "", function(err, response){
     if (err==null){
       if (response["version"]!=undefined){
         var version=response["version"];
         var message=response["message"];
         if (storage_settings["version"]!=version){
-          getJSON("https://downloads.blazebrowser.com/source/" + storage_settings["version_branch"] + "/main_updater_list.json", function(err2, response2){
+          getJSON("https://raw.githubusercontent.com/BlazeBrowser/blaze-browser/" + storage_settings["version_branch"] + "/main_updater_list.json", function(err2, response2){
             if (err2==null){
               if (response2["requirement_core"]<=version_core){
                 if (browser_startup_update_check_alerts==0){

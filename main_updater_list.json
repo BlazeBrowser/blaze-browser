@@ -37,5 +37,5 @@
     { "file": "/browser.js", "breaking": true },
     { "file": "/browser.html", "breaking": true }
 	],
-  "requirement_core": 5
+  "requirement_core": 6
 }
