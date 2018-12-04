@@ -13,10 +13,6 @@ Browser code can be in the browsers application support / app data folder inside
 ## Current deployment script to raw.blazebrowser.com
 
 ```
-# CMDs working directory is the pipeline's filesystem with cloned repo
-#Update blaze-browser brach MASTER
-git config --global user.email "me@anthonys.space"
-git config --global user.name "Anthony Rossbach"
 BRANCH="master"
 if [ -d "$BRANCH" ]; then
 	cd ./$BRANCH
