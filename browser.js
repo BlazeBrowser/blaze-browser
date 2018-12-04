@@ -221,7 +221,7 @@ ipcRenderer.on('startup_command' , function(event , data){
     var timecode=Date.now();
     browser_render_notification("success","Blaze has a fresh coat of paint! We just installed some updates. You can check them out by clicking on Recent Blaze Updates in the menu.");
 
-    getJSON("https://downloads.blazebrowser.com/source/" + storage_settings["version_branch"] + "/version.json?version=" + timecode + "", function(err, response){
+    getJSON("https://raw.blazebrowser.com/" + storage_settings["version_branch"] + "_version.json?version=" + timecode + "", function(err, response){
       if (err==null){
         if (response["version"]!=undefined){
           var version=response["version"];
