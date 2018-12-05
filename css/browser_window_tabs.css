@@ -30,7 +30,7 @@
   cursor: pointer;
   border:1px solid rgba(42,49,53,0);
   color:rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 248, 248, 0.7) 100%);
+  background: rgba(255, 255, 255, 0.7);
   -webkit-app-region: no-drag;
   backdrop-filter: blur(3px);
 }
@@ -76,7 +76,7 @@
 }
 
 #browser_tabs_container .tab.active{
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+  background: rgba(255, 255, 255, 1);
   color:rgb(0,0,0);
   border:1px solid rgba(242,242,242,0);
   border-bottom:1px solid rgba(248, 248, 248, 1);
@@ -117,11 +117,11 @@
 }
 
 #browser_tabs_container .tab:hover{
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+  background: rgba(255, 255, 255, 1);
 }
 
 #browser_tabs_container .tab.active:hover{
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%);
+  background: rgba(255, 255, 255, 1);
 }
 
 #browser_tabs_container .tab a{
