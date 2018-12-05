@@ -1,4 +1,4 @@
-#browser_tabs_container{
+x#browser_tabs_container{
   display:inline-block;
   width: 100%;
   width: calc(100% - 8px);
@@ -79,7 +79,7 @@
   background: rgba(255, 255, 255, 1);
   color:rgb(0,0,0);
   border:1px solid rgba(242,242,242,0);
-  border-bottom:1px solid rgba(248, 248, 248, 1);
+  border-bottom:1px solid rgba(255, 255, 255, 1);
   padding-bottom:11px;
   padding-top: 7px;
   border-bottom-left-radius: 0px;
