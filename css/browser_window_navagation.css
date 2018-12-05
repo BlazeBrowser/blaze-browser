@@ -1,6 +1,6 @@
 #browser_addressbar{
   padding-right:5px;
-  background:rgb(255,255,255);
+  background:rgba(240,240,240,1);
   height:22px;
   padding:3px;
   border-radius:5px;
@@ -224,7 +224,7 @@ cursor: pointer;
 }
 
 #browser_menu_container .button:hover{
-background:rgb(250,250,250);
+background:rgb(255,255,255);
 }
 
 #browser_menu_container .button.menu{
