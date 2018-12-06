@@ -32,7 +32,6 @@ x#browser_tabs_container{
   color:rgb(0,0,0);
   background: rgba(255, 255, 255, 0.7);
   -webkit-app-region: no-drag;
-  backdrop-filter: blur(3px);
 }
 
 #browser_tabs_container .tab .close{
@@ -155,7 +154,6 @@ x#browser_tabs_container{
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-app-region: no-drag;
-  backdrop-filter: blur(3px);
 }
 
 #browser_tabs_new:hover{

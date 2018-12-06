@@ -34,7 +34,6 @@ body.macos{
 }
 #browser_webview_container.blur{
   filter: blur(2px);
-  transform: scale(.95);
 }
 webview{
   background: #ffffff;
