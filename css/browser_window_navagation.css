@@ -2,8 +2,12 @@
   padding-right:5px;
   background:rgba(240,240,240,1);
   height:22px;
-  padding:3px;
-  border-radius:5px;
+  padding:5px;
+  border-radius:7px;
+}
+
+#browser_addressbar:hover, #browser_addressbar:focus-within{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
 }
 
 #browser_navagation_container{
@@ -23,7 +27,7 @@
 #browser_pageinfo_container .tab_container_master{
   float: left;
   display: inline-block;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-right:5px;
   padding-left:5px;
   padding-right:5px;
@@ -88,24 +92,25 @@
   display: none;
   margin-right: 5px;
   width: 350px;
-  padding-top:9px;
+  padding-top:11px;
 }
 
 #browser_pageinfo_container .dropdown .box{
-  background:rgba(242,242,242,0.8);
-  backdrop-filter: blur(3px);
-  padding:5px;
+  background:rgba(240,240,240,1);
+  padding-top:10px;
+  padding-bottom:1px;
   padding-left:10px;
   padding-right:10px;
-  border-bottom-right-radius:5px;
+  border-bottom-right-radius:7px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
 }
 
 #browser_pageinfo_container .dropdown .bubble{
-  border-radius:3px;
+  border-radius:7px;
   background:rgb(255,255,255);
-  margin-top:5px;
-  margin-bottom:5px;
+  margin-bottom:10px;
   padding:10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
 }
 
 #browser_pageinfo_container .dropdown .bubble .header{
@@ -127,17 +132,18 @@
 #browser_navagation_container .button{
   float: left;
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 7px;
   margin-left:2px;
   margin-right:2px;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   background: rgba(255,255,255,0);
   cursor: pointer;
 }
 
 #browser_navagation_container .button:hover{
-  background:rgb(215,215,215);
+  background:rgba(240,240,240,1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
 }
 
 /* ####################################-- BUTTON BACK */
@@ -214,17 +220,18 @@
 #browser_menu_container .button{
 float: left;
 display: inline-block;
-border-radius: 3px;
+border-radius: 7px;
 margin-right:2px;
 margin-left:2px;
-width: 28px;
-height: 28px;
+width: 32px;
+height: 32px;
 background: rgba(255, 255, 255,0);
 cursor: pointer;
 }
 
 #browser_menu_container .button:hover{
-background:rgb(255,255,255);
+  background:rgba(240,240,240,1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
 }
 
 #browser_menu_container .button.menu{
@@ -253,24 +260,25 @@ background:rgb(255,255,255);
   right: 0px;
   display: none;
   width: 350px;
-  padding-top:9px;
+  padding-top:11px;
 }
 
 #browser_menu_container .button .dropdown .box{
-  background:rgba(242,242,242,0.8);
-  backdrop-filter: blur(3px);
-  padding:5px;
+  background:rgba(240,240,240,1);
+  padding-top:10px;
+  padding-bottom:1px;
   padding-left:10px;
   padding-right:10px;
-  border-bottom-left-radius:5px;
+  border-bottom-left-radius:7px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
 }
 
 #browser_menu_container .button .dropdown .bubble{
-  border-radius:3px;
+  border-radius:7px;
   background:rgb(255,255,255);
-  margin-top:5px;
-  margin-bottom:5px;
+  margin-bottom:10px;
   padding:10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
 }
 
 #browser_menu_container .button .dropdown .bubble .header{
@@ -287,7 +295,7 @@ background:rgb(255,255,255);
 	padding-left:0px;
 	padding-right:0px;
 	margin-top: 5px;
-	border-radius: 3px;
+	border-radius: 5px;
 	color: rgb(68,68,68);
 	background: rgba(255,255,255,0);
   cursor: pointer;
@@ -304,7 +312,8 @@ background:rgb(255,255,255);
 #browser_menu_container .button .dropdown a:hover{
 	padding-left:5px;
 	padding-right:5px;
-	box-shadow: 0 0 0px 2px rgb(238, 238, 238);
+  font-weight:500;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
 	color: rgb(68,68,68);
 	background: rgb(255,255,255);
 }

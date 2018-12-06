@@ -38,7 +38,7 @@ function browser_render_layout(){
 
   var browser_secondlevel_browser_addressbar = document.querySelector('#browser_addressbar').offsetWidth;
   var browser_secondlevel_browser_pageinfo_container = document.querySelector('#browser_pageinfo_container').offsetWidth;
-  document.querySelector('#location').style.width = browser_secondlevel_browser_addressbar - browser_secondlevel_browser_pageinfo_container - 8 + 'px';
+  document.querySelector('#location').style.width = browser_secondlevel_browser_addressbar - browser_secondlevel_browser_pageinfo_container - 12 + 'px';
 
   //set webview area sizes
   var webviewWidth = windowWidth;

@@ -1,5 +1,5 @@
 #browser_levelcase{
-  background:rgb(42,49,53);
+  background:rgb(230,230,230);
 }
 
 #browser_firstlevel {
@@ -21,7 +21,7 @@
   -webkit-app-region: no-drag;
   background: rgba(255,255,255, 1);
   width: 100%;
-  height:28px;
+  height:32px;
   padding-top:5px;
   padding-bottom:5px;
   position: relative;
@@ -78,7 +78,6 @@
 }
 #browser_secondlevel_center{
   width:100%;
-  overflow: hidden;
   display:inline-block;
   float: left;
 }
@@ -182,7 +181,7 @@ body.windows .browser_maximize{
 }
 
 #browser_webview_overlay .case{
-  background: rgba(255, 255, 255, 0.31);
+  background: rgba(104, 104, 104, 0.45);
   z-index: 95000;
   position: fixed;
   left: 0px;
@@ -197,10 +196,11 @@ body.windows .browser_maximize{
   margin: 0px auto;
   padding:10px;
   margin-bottom: 10px;
-  background: rgba(242,242,242,0.98);
+  background: rgba(240,240,240,1);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
 }
 
 #browser_webview_overlay .case .frame .bubble{
@@ -208,6 +208,7 @@ body.windows .browser_maximize{
   background:rgb(255,255,255);
   padding:10px;
   margin-bottom:10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
 }
 
 #browser_webview_overlay .case .close{
