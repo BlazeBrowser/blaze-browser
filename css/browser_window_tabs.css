@@ -30,8 +30,9 @@
   cursor: pointer;
   border:1px solid rgba(42,49,53,0);
   color:rgb(0,0,0);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(245, 245, 245, 0.95);
   -webkit-app-region: no-drag;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
 }
 
 #browser_tabs_container .tab .close{
@@ -138,6 +139,7 @@
 }
 
 #browser_tabs_new{
+  transition: all 0.3s ease;
   display:inline-block;
   border-radius:7px;
   margin-right: 4px;
@@ -149,7 +151,7 @@
   vertical-align: middle;
   height:28px;
   width:28px;
-  background-color:rgba(255, 255, 255, 0.6);
+  background: rgba(245, 245, 245, 0.95);
   background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAErSURBVFhH7Zg9SgNBGEC3ME0KS9Ol8AAL+8Nuum3MDSSCgpUIeg5zC8Eqd0iXLmmSG8TCUkRsBQ36Fr4iDBPZ8JndLb4HD0Lmm8xjCGFJYBh7kCRJV162izAMT4ib4iaO4zccyVI7IOwJf7b8xL4sNw83tnYCS89luXkIfHEDee9SlpvHArVYoBYL1GKBWmoNzPO8x4dPcI3PFf1yA/HVM+eV2WUURReS8DdsmDkH1SLnfuNAMvxkWXbs21yjY0nxUxTFEUMfzqba5AbvJGU3DF4z6PtOHdoFVnsiT9P0lMgrvK3ou3NYeRuPzswubzjvjD0dOf7/4RD7HVRhgVosUIsFarFALcSs3EAcynLzEDgiaLMVNy+fjGS5HRA5wAe8J7Cd/xMaxt4EwS8Rj/C1aZ8q7gAAAABJRU5ErkJggg==");
   background-size: 50%;
   background-repeat: no-repeat;

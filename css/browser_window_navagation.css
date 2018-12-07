@@ -4,6 +4,7 @@
   height:22px;
   padding:5px;
   border-radius:7px;
+  transition: all 0.3s ease;
 }
 
 #browser_addressbar:hover, #browser_addressbar:focus-within{
@@ -139,6 +140,7 @@
   height: 32px;
   background: rgba(255,255,255,0);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #browser_navagation_container .button:hover{
@@ -218,15 +220,16 @@
 }
 
 #browser_menu_container .button{
-float: left;
-display: inline-block;
-border-radius: 7px;
-margin-right:2px;
-margin-left:2px;
-width: 32px;
-height: 32px;
-background: rgba(255, 255, 255,0);
-cursor: pointer;
+  float: left;
+  display: inline-block;
+  border-radius: 7px;
+  margin-right:2px;
+  margin-left:2px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255,0);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #browser_menu_container .button:hover{

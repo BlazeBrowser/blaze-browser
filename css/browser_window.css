@@ -124,10 +124,13 @@ body.windows .browser_close{
   height:22px;
   width:22px;
   margin-top: -5px;
+  transition: all 0.3s ease;
 }
 
 .browser_close:hover{
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.3);
+  cursor: pointer;
 }
 
 .browser_minimize {
@@ -147,10 +150,13 @@ body.windows .browser_minimize{
   height:22px;
   width:22px;
   margin-top: -5px;
+  transition: all 0.3s ease;
 }
 
 .browser_minimize:hover{
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.3);
+  cursor: pointer;
 }
 
 .browser_maximize {
@@ -170,10 +176,13 @@ body.windows .browser_maximize{
   height:22px;
   width:22px;
   margin-top: -5px;
+  transition: all 0.3s ease;
 }
 
 .browser_maximize:hover{
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.3);
+  cursor: pointer;
 }
 
 #browser_webview_overlay{
