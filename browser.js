@@ -20,6 +20,16 @@ if (storage_preferences["search_engine_url"]==undefined){
 if (storage_preferences["homepage"]==undefined){
   storage_preferences["homepage"]="";
 }
+if (storage_preferences["security_webrequest_blocklist"]==undefined){
+  storage_preferences["security_webrequest_blocklist"]={};
+  storage_preferences["security_webrequest_blocklist"]["adscripts"]=true;
+  storage_preferences["security_webrequest_blocklist"]["antiadblockscripts"]=true;
+  storage_preferences["security_webrequest_blocklist"]["trackerscripts"]=true;
+  storage_preferences["security_webrequest_blocklist"]["socialscripts"]=true;
+  storage_preferences["security_webrequest_blocklist"]["spam"]=true;
+  storage_preferences["security_webrequest_blocklist"]["custom"]=true;
+  storage_preferences["security_webrequest_blocklist"]["badnetwork"]=true;
+}
 
 var tabs=[];
 var domains_open=[];
