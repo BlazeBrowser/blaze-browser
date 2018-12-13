@@ -306,7 +306,7 @@ function browser_tab_new(url,selecturl,background){
         if (event.args[0]=="beta"){
           storage_settings["version_branch"]=event.args[0];
         }
-        if (event.args[0]=="alpha"){
+        if (event.args[0]=="master"){
           storage_settings["version_branch"]=event.args[0];
         }
         browser_render_notification('normal','Your update branch has been change to ' + event.args[0] + '. Restart your browser to update.');
