@@ -77,6 +77,14 @@ function base64_encode(datathis) {
   return datathis;
 }
 
+function base64_ssfix(datathis) {
+  datathis=datathis.replace(/\s/g, "");
+	datathis=datathis.replace(/\+/g, "-");
+	datathis=datathis.replace(/\//g, "_");
+	datathis=datathis.replace(/=/g, ",");
+  return datathis;
+}
+
 function base64_decode(datathis) {
   datathis=datathis.replace(/\s/g, "");
 	datathis=datathis.replace(/-/g, "+");
@@ -130,6 +138,22 @@ var getJSON = function(url, callback) {
     }
   };
   xhr.send();
+};
+
+var sendPAYLOAD = function(url, payload_name, payload_content, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', url, true);
+  xhr.responseType = 'json';
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    var status = xhr.status;
+    if (status === 200) {
+      callback(null, xhr.response);
+    } else {
+      callback(status, JSON.parse(xhr.response));
+    }
+  };
+  xhr.send("" + payload_name + "=" + payload_content + "");
 };
 
 function extract_urldata(url){

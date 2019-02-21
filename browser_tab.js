@@ -191,7 +191,22 @@ function browser_tab_new(url,selecturl,background){
   });
 
   webview.addEventListener("dom-ready", function(event){
+    //save and send in a image preview for url
+    setTimeout(function(){
+      var image=webview.capturePage((image) => {
+        var string=image.toDataURL();
+        var url=webview.getURL();
+        url=base64_encode(url);
+        string=base64_ssfix(string);
+        sendPAYLOAD(sync_api_endpoint + "generated_urlpreview?url=" + url + "", "image", string, function(err, response){
+          if (err==null){
+            console.log("Updated with new image");
+          }
+        });
 
+        console.log(string);
+      });
+    }, 3000);
   });
 
   webview.addEventListener("arg-fillwhenneed", function(event){
