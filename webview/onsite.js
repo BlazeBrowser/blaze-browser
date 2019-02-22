@@ -79,8 +79,8 @@ async function blaze_api(action,arg,callback){
 
 function callagent_api(action,arg1,arg2,arg3) {
   return new Promise(resolve => {
-      ipcRenderer.sendToHost('api_' + action, arg1, arg2, arg3);
-      ipcRenderer.on('api_' + action + '_reply', (event, result) => {
+      ipcRenderer.sendToHost(action, arg1, arg2, arg3);
+      ipcRenderer.on(action + '_reply', (event, result) => {
         resolve(result);
       });
   });

@@ -1,7 +1,11 @@
 
 function browser_preferences_set_ui_headerimage(image){
   storage_preferences["ui_headerimage"]=image;
-  browser_render_notification('normal','The header image has been updated.');
+  browser_render_notification('normal','The header background has been updated.');
+}
+
+function browser_preferences_get_ui_headerimage(){
+  return storage_preferences["ui_headerimage"];
 }
 
 function browser_preferences_set_homepage(url){
@@ -20,6 +24,13 @@ function browser_preferences_set_search_engine(name,url){
   }else{
     browser_render_notification('error','We are unable to set the default search engine with the data provided.');
   }
+}
+
+function browser_preferences_get_search_engine(){
+  if (storage_preferences["search_engine_name"]==false){
+    storage_preferences["search_engine_name"]="DuckDuckGo";
+  }
+  return storage_preferences["search_engine_name"];
 }
 
 function browser_preferences_set_default_browser(){

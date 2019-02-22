@@ -274,7 +274,7 @@ function browser_tab_new(url,selecturl,background){
 
   webview.addEventListener('ipc-message', function(event){
 
-    var response=false;
+    var sendback=null;
 
     //--Basic from onsite (full access) this data is only from the onsite.js file and not from websites
     if (event.channel=="browser_ui_statusbar_set"){
@@ -301,6 +301,8 @@ function browser_tab_new(url,selecturl,background){
 
     //--API! Advanced Internal Domain ONLY!
     if (urlbrekdown["hostname"]=="internal.blazebrowser.com"){
+
+      //Preferences SET
       if (event.channel=="api_preferences_set_search_engine"){
         browser_preferences_set_search_engine(event.args[0],event.args[1]);
       }
@@ -310,16 +312,12 @@ function browser_tab_new(url,selecturl,background){
       if (event.channel=="api_preferences_set_homepage"){
         browser_preferences_set_homepage(event.args[0]);
       }
-      if (event.channel=="api_preferences_get_homepage"){
-        response=browser_preferences_get_homepage();
-      }
       if (event.channel=="api_preferences_set_default_browser"){
         browser_preferences_set_default_browser();
       }
-      if (event.channel=="api_preferences_get_default_browser"){
-        response=browser_preferences_get_default_browser();
-      }
-      if (event.channel=="api_core_version_branch"){
+
+      //Core SET
+      if (event.channel=="api_core_set_version_branch"){
         if (event.args[0]=="stable"){
           storage_settings["version_branch"]=event.args[0];
         }
@@ -335,10 +333,34 @@ function browser_tab_new(url,selecturl,background){
         browser_render_notification('normal','Your browser is ready to be updated, just restart Blaze to begin the update.');
         storage_settings["version"]="reset_1_fn773j";
       }
+
+      //Preferences GET
+      if (event.channel=="api_preferences_get_homepage"){
+        sendback=browser_preferences_get_homepage();
+      }
+      if (event.channel=="api_preferences_get_default_browser"){
+        browser_preferences_get_default_browser();
+      }
+
+      //Core GET
+      if (event.channel=="api_core_get_version_branch"){
+        sendback=storage_settings["version_branch"];
+      }
+
     }
 
-    webview.send('' + event.channel + '_reply', response);
+    //--API! Advanced API for Domains!
 
+    //Preferences GET
+    if (event.channel=="api_preferences_get_ui_headerimage"){
+      sendback=browser_preferences_get_ui_headerimage();
+    }
+    if (event.channel=="api_preferences_get_search_engine"){
+      sendback=browser_preferences_get_search_engine();
+    }
+
+
+    webview.send('' + event.channel + '_reply', sendback);
   });
 }
 
