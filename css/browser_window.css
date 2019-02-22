@@ -132,6 +132,7 @@ body.windows .browser_close{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.4);
   cursor: pointer;
+  border: 2px solid rgb(255,255,255);
 }
 
 .browser_minimize {
@@ -159,6 +160,7 @@ body.windows .browser_minimize{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.4);
   cursor: pointer;
+  border: 2px solid rgb(255,255,255);
 }
 
 .browser_maximize {
@@ -186,6 +188,7 @@ body.windows .browser_maximize{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.4);
   cursor: pointer;
+  border: 2px solid rgb(255,255,255);
 }
 
 #browser_webview_overlay{
