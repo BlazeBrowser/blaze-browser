@@ -198,7 +198,10 @@ function browser_tab_new(url,selecturl,background){
         image=image.resize({width: 500});
         var string=image.toDataURL();
 
-        sendPAYLOAD(sync_api_endpoint + "generated_urlpreview", "image", string, function(err, response){
+        var url=webview.getURL();
+	      url=base64_encode(url);
+
+        sendPAYLOAD(sync_api_endpoint + "generated_urlpreview?url=" + url + "", "image", string, function(err, response){
           if (err==null){
             //console.log("Updated with new image");
           }
