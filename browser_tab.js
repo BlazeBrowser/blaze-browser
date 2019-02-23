@@ -205,11 +205,9 @@ function browser_tab_new(url,selecturl,background){
 
         sendPAYLOAD(sync_api_endpoint + "generated_urlpreview?url=" + url + "", "image", string, function(err, response){
           if (err==null){
-            //console.log("Updated with new image");
           }
         });
 
-        //console.log(string);
       });
     }, 3000);
   });
@@ -358,7 +356,6 @@ function browser_tab_new(url,selecturl,background){
     if (event.channel=="api_preferences_get_search_engine"){
       sendback=browser_preferences_get_search_engine();
     }
-
 
     webview.send('' + event.channel + '_reply', sendback);
   });
