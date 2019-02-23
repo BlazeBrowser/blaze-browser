@@ -191,7 +191,7 @@ function browser_tab_new(url,selecturl,background){
   });
 
   webview.addEventListener("dom-ready", function(event){
-    
+
   });
 
   webview.addEventListener("arg-fillwhenneed", function(event){

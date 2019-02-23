@@ -290,14 +290,16 @@ document.onkeydown = function(e) {
     command=true;
   }
 
-  if (command==true && key=="b"){
-    e.preventDefault();
-    alert("Ctrl + B shortcut combination was pressed");
-  }
   //--Close open tab
   if (command==true && key=="w"){
     e.preventDefault();
     browser_closetab(tabs_current);
+  }
+
+  //--Reload current tab
+  if (command==true && key=="r"){
+    e.preventDefault();
+    browser_tab_control_reload(tabs_current);
   }
 
   //--Open new tab
@@ -310,11 +312,5 @@ document.onkeydown = function(e) {
   if (command==true && key=="i"){
     e.preventDefault();
     remote.getCurrentWindow().toggleDevTools();
-  }
-
-  //--Create error
-  if (command==true && key=="x"){
-    e.preventDefault();
-    fakefunction();
   }
 };
