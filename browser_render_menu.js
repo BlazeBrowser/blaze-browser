@@ -23,7 +23,7 @@ function browser_render_menu(){
 
   rendered=rendered + "<div class='bubble'><div class='header'>Options</div>";
   rendered=rendered + "<a onclick=\"javascript:browser_tab_new('https://internal.blazebrowser.com/account/preferences',false);\">Browser Preferences</a>";
-  rendered=rendered + "<a onclick=\"javascript:browser_tab_new('https://www.notion.so/lammcs/Recent-Updates-a4964f1c8c6e470d80cf9641cc8a6b8f',false);\">Recent Blaze Updates</a>";
+  rendered=rendered + "<a onclick=\"javascript:browser_tab_new('https://www.notion.so/Recent-Updates-a4964f1c8c6e470d80cf9641cc8a6b8f',false);\">Recent Blaze Updates</a>";
   rendered=rendered + "</div>";
 
   rendered=rendered + "</div></div></div>";
