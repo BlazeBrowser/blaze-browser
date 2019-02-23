@@ -339,7 +339,7 @@ function browser_tab_new(url,selecturl,background){
         sendback=browser_preferences_get_homepage();
       }
       if (event.channel=="api_preferences_get_default_browser"){
-        browser_preferences_get_default_browser();
+        sendback=browser_preferences_get_default_browser();
       }
 
       //Core GET
