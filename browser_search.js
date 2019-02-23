@@ -27,7 +27,7 @@ function browser_search(e){
     document.getElementById("browser_webview_overlay").innerHTML="";
 
     console.log(check_validurl(search));
-    
+
     if (check_validurl(search)==true){
       browser_url_goto(search);
     }else{
@@ -105,7 +105,7 @@ function browser_search_api_duckduckgo(query){
 
           //return the results!
           if (results!=""){
-            results=results + "<div style='margin-top:25px;text-align:right;'><img src='https://blazebrowser.com/cdn/website_icon?hostname=duckduckgo.com&size=64' style='max-width:32px;margin-top: -8px;margin-left: 10px;float: right;border-radius: 32px;'> Result(s) by DuckDuckGo</div>";
+            results=results + "<div style='margin-top:25px;text-align:right;'><img src='https://blazebrowser.com/cdn/webpage_logo?url=duckduckgo.com&size=64' style='max-width:32px;margin-top: -8px;margin-left: 10px;float: right;border-radius: 32px;'> Result(s) by DuckDuckGo</div>";
             if (document.getElementById("browser_search_content_duckduckgo")!=undefined){
               document.getElementById("browser_search_content_duckduckgo").innerHTML=results;
             }
@@ -200,7 +200,7 @@ function browser_search_sync_formated(title,protocol,hostname,port,path,search){
   var url_clean="" + hostname + "" + port + "" + path + "" + search + "";
   if (browser_search_sync_formated_done[url_clean]==undefined){
     browser_search_sync_formated_done[url_clean]=true;
-    generated="<div style='overflow:hidden;' class='bubble' onclick=\"javascript:browser_url_goto('" + url + "');\"><div class='icon' style=\"background:#ffffff;background-image:url('https://blazebrowser.com/cdn/website_icon?hostname=" + hostname + "&size=64');background-size: cover;background-position: center center;width:30px;height:30px;border-radius:3px;float:left;margin-right:10px;\"></div>" + title + "<BR><a href=\"javascript:browser_url_goto('" + url + "');\">" + url_clean + "</a></div>";
+    generated="<div style='overflow:hidden;' class='bubble' onclick=\"javascript:browser_url_goto('" + url + "');\"><div class='icon' style=\"background:#ffffff;background-image:url('https://blazebrowser.com/cdn/webpage_logo?url=" + hostname + "&size=128');background-size: cover;background-position: center center;width:30px;height:30px;border-radius:3px;float:left;margin-right:10px;\"></div>" + title + "<BR><a href=\"javascript:browser_url_goto('" + url + "');\">" + url_clean + "</a></div>";
   }
   return generated;
 }
