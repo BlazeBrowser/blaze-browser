@@ -9,7 +9,7 @@ function browser_render_pageinfo(){
   secured_type="unknown";
   secured_message="Loading";
 
-  pageinfo=pageinfo + "<div class='bubble' style='text-align:center;'><img src='https://blazebrowser.com/cdn/website_icon?hostname=" + hostname + "&size=256' style='max-width:200px;max-height:90px;border-radius:5px;'></div>";
+  pageinfo=pageinfo + "<div class='bubble' style='text-align:center;'><img src='https://blazebrowser.com/cdn/webpage_logo?url=" + hostname + "&size=256' style='max-width:200px;max-height:90px;border-radius:5px;'></div>";
 
   if (tabs[tabs_current]["state_https"]==true && tabs[tabs_current]["state_https_elements"]==true){
     secured_type="secure";

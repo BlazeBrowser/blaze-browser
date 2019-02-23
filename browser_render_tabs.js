@@ -48,7 +48,7 @@ function browser_render_tabs(){
     if (tabid==tabs_current){
       var active=" active";
     }
-    rendered=rendered + "<div style='width:" + width + "%;' class='tab_container'><div class='tab" + active + "' onclick=\"javascript:browser_tab_control_focus('" + tabid + "');\"><img src='./media/tab_active_edge_left.svg' class='edge_left'><div class='icon' style=\"background-image:url('https://blazebrowser.com/cdn/website_icon?hostname=" + urlinfo["hostname"] + "&size=64');background-size: cover;background-position: center center;\"></div><div class='title'>" + tabs[tabid]["title"] + "</div><div class='close' onclick=\"javascript:browser_closetab('" + tabid + "');\"></div><img src='./media/tab_active_edge_right.svg' class='edge_right'></div></div>";
+    rendered=rendered + "<div style='width:" + width + "%;' class='tab_container'><div class='tab" + active + "' onclick=\"javascript:browser_tab_control_focus('" + tabid + "');\"><img src='./media/tab_active_edge_left.svg' class='edge_left'><div class='icon' style=\"background-image:url('https://blazebrowser.com/cdn/webpage_logo?url=" + urlinfo["hostname"] + "&size=32');background-size: cover;background-position: center center;\"></div><div class='title'>" + tabs[tabid]["title"] + "</div><div class='close' onclick=\"javascript:browser_closetab('" + tabid + "');\"></div><img src='./media/tab_active_edge_right.svg' class='edge_right'></div></div>";
   });
 
   if (render_tabs_current!=rendered){
