@@ -424,10 +424,10 @@ function browser_set_taburl(tab_instance_id,url,sync){
     if (tabs[tab_instance_id]["url"]!=url){
       //Send in the history event to sync system
       if (sync==true){
-        //2 second delay so redirects are not counted.
+        //5 second delay so redirects are not counted.
         tabs[tab_instance_id]["syncdelay"]=tabs[tab_instance_id]["syncdelay"]+1;
-        setTimeout("if (tabs[" + tab_instance_id + "]['syncdelay']==" + tabs[tab_instance_id]["syncdelay"] + "){ if (tabs[" + tab_instance_id + "]['url']=='" + url + "'){ sync_push_history('" + tab_instance_id + "','" + url + "'); }}", 2000);
-        setTimeout(function(){ sync_update_history_title(tab_instance_id,tabs[tab_instance_id]["url"],true,tabs[tab_instance_id]["title"]); }, 2100);
+        setTimeout("if (tabs[" + tab_instance_id + "]['syncdelay']==" + tabs[tab_instance_id]["syncdelay"] + "){ if (tabs[" + tab_instance_id + "]['url']=='" + url + "'){ sync_push_history('" + tab_instance_id + "','" + url + "'); }}", 5200);
+        setTimeout(function(){ sync_update_history_title(tab_instance_id,tabs[tab_instance_id]["url"],true,tabs[tab_instance_id]["title"]); }, 5500);
         //But we will at this time get the update id ready for the title and other sync scripts
         sync_push_history_prepare(tab_instance_id,url);
         sync_push_history_clean(tab_instance_id,tabs[tab_instance_id]["url"]);
