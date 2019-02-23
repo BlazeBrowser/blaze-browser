@@ -39,7 +39,7 @@ function browser_preferences_set_default_browser(){
   browser_preferences_set_default_browser_run("https");
 }
 
-function browser_preferences_set_default_browser_run(){
+function browser_preferences_set_default_browser_run(protocol){
   var isdefault=app.isDefaultProtocolClient(protocol);
   if (isdefault==false){
     app.setAsDefaultProtocolClient(protocol);
@@ -52,6 +52,7 @@ function browser_preferences_set_default_browser_run(){
 
 function browser_preferences_get_default_browser(){
   var isdefault=app.isDefaultProtocolClient("http");
+  console.log(isdefault);
   if (isdefault==false){
     return false;
   }else{
