@@ -193,22 +193,23 @@ function browser_tab_new(url,selecturl,background){
   webview.addEventListener("dom-ready", function(event){
     //save and send in a image preview for url
     setTimeout(function(){
-      var image=webview.capturePage((image) => {
-        var size=image.getSize();
+      if (webview.isLoadingMainFrame()==false){
+        var image=webview.capturePage((image) => {
+          var size=image.getSize();
 
-        image=image.resize({width: 500});
-        var string=image.toDataURL();
-        string=base64_ssfix(string);
+          image=image.resize({width: 500});
+          var string=image.toDataURL();
+          string=base64_ssfix(string);
 
-        var url=webview.getURL();
-	      url=base64_encode(url);
+          var url=webview.getURL();
+  	      url=base64_encode(url);
 
-        sendPAYLOAD(sync_api_endpoint + "generated_urlpreview?url=" + url + "", "image", string, function(err, response){
-          if (err==null){
-          }
+          sendPAYLOAD(sync_api_endpoint + "generated_urlpreview?url=" + url + "", "image", string, function(err, response){
+            if (err==null){
+            }
+          });
         });
-
-      });
+      }
     }, 3000);
   });
 
