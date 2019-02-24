@@ -198,7 +198,7 @@ function browser_search_sync_formated(title,protocol,hostname,port,path,search){
   var url_clean="" + hostname + "" + port + "" + path + "" + search + "";
   if (browser_search_sync_formated_done[url_clean]==undefined){
     browser_search_sync_formated_done[url_clean]=true;
-    generated="<div style='overflow:hidden;' class='bubble' onclick=\"javascript:browser_url_goto('" + url + "');\"><div class='icon' style=\"background:#ffffff;background-image:url('https://blazebrowser.com/cdn/webpage_logo?url=" + hostname + "&size=128');background-size: cover;background-position: center center;width:30px;height:30px;border-radius:3px;float:left;margin-right:10px;\"></div>" + title + "<BR><a href=\"javascript:browser_url_goto('" + url + "');\">" + url_clean + "</a></div>";
+    generated="<div style='overflow:hidden;' class='bubble' onclick=\"javascript:browser_url_goto('" + url + "');\"><div class='icon' style=\"background:#ffffff;background-image:url('https://blazebrowser.com/cdn/webpage_logo?url=" + hostname + "&size=128');background-size: cover;background-position: center center;width:30px;height:30px;border-radius:3px;float:left;margin-right:10px;\"></div><strong>" + title + "</strong><BR><a href=\"javascript:browser_url_goto('" + url + "');\">" + url_clean + "</a></div>";
   }
   return generated;
 }
