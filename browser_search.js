@@ -26,8 +26,6 @@ function browser_search(e){
     browser_search_active=false;
     document.getElementById("browser_webview_overlay").innerHTML="";
 
-    console.log(check_validurl(search));
-
     if (check_validurl(search)==true){
       browser_url_goto(search);
     }else{

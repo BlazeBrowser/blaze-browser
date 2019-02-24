@@ -97,7 +97,7 @@
 }
 
 #browser_pageinfo_container .dropdown .box{
-  background:rgba(240,240,240,1);
+  background:rgb(255, 255, 255);
   padding-top:10px;
   padding-bottom:1px;
   padding-left:10px;
@@ -257,7 +257,7 @@
   cursor: default;
   text-align:left;
   position: absolute;
-  z-index: 7000;
+  z-index: 97000;
   float: right;
   margin-top: 25px;
   right: 0px;
@@ -267,7 +267,7 @@
 }
 
 #browser_menu_container .button .dropdown .box{
-  background:rgba(240,240,240,1);
+  background:rgb(255, 255, 255);
   padding-top:10px;
   padding-bottom:1px;
   padding-left:10px;

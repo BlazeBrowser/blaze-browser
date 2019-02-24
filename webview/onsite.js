@@ -187,6 +187,18 @@ document.onmouseout = function() {
 
 
 //###########################################
+//########################################### Built in function override
+//###########################################
+
+var Notification = function(title,ops){
+  //Send to main process in the future to show
+  ipcRenderer.sendToHost('api_event_notification', title);
+  return false;
+};
+window.Notification = Notification;
+
+
+//###########################################
 //########################################### Context Menu!
 //###########################################
 

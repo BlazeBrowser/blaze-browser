@@ -50,6 +50,19 @@ Array.prototype.remove = function(){
     return this;
 };
 
+function replaceNewline(input){
+    var newline = String.fromCharCode(13, 10);
+    return input.replaceAll('\\n', newline);
+}
+String.prototype.replaceAll = function (find, replace) {
+    var result = this;
+    do {
+        var split = result.split(find);
+        result = split.join(replace);
+    } while (split.length > 1);
+    return result;
+};
+
 function traverseChildren(elem){
   var children = [];
   var q = [];

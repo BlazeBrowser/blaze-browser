@@ -339,6 +339,12 @@ function browser_tab_new(url,selecturl,background){
       sendback=browser_preferences_get_search_engine();
     }
 
+    if (event.channel=="api_event_notification"){
+      var urlinfo=extract_urldata(tabs[tab_instance_id]["url"]);
+      var image="https://blazebrowser.com/cdn/webpage_logo?url=" + urlinfo["hostname"] + "&size=128";
+      browser_render_notification('website','' + event.args[0] + '',urlinfo["hostname"],image,false,false);
+    }
+
     webview.send('' + event.channel + '_reply', sendback);
   });
 }
