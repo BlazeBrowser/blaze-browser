@@ -63,6 +63,7 @@ function init() {
     api: blaze_api
   };
 
+  setTimeout(function(){ adblock_run(); }, 5500);
 }
 
 async function blaze_api(action,arg,callback){
@@ -258,3 +259,29 @@ window.addEventListener('contextmenu', function (e) {
     menu_normal.popup(remote.getCurrentWindow());
   }
 }, false);
+
+
+
+//###########################################
+//########################################### Ad Blocker for elements
+//###########################################
+
+var blocked_elements=array(".blaze-neverfindme");
+if (window.location.hostname=="twitter.com"){
+  blocked_elements.push(".promoted-tweet");
+}
+
+function adblock_run(){
+  for(var ir = 0; ir < blocked_elements.length; ir++) {
+    var theelm=blocked_elements[ir];
+    var checkfor =document.querySelectorAll(theelm);
+    if (checkfor.length>=1){
+      for(var i = 0; i < checkfor.length; i++) {
+        //checkfor[i]
+        checkfor[i].parentNode.removeChild(checkfor[i]);
+        console.log("Adblock: Blocked ad element " + theelm + " from showing.");
+      }​
+    }
+  }
+  setTimeout(function(){ adblock_run(); }, 5500);
+}
