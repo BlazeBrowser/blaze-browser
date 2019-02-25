@@ -268,7 +268,7 @@ window.addEventListener('contextmenu', function (e) {
 
 var blocked_elements=[".blaze-neverfindme"];
 if (window.location.hostname=="twitter.com" || window.location.hostname=="www.twitter.com"){
-  blocked_elements.push(".promoted-tweet");
+  blocked_elements.push(".promoted-tweet",".promoted-trend");
 }
 
 if (window.location.hostname=="facebook.com" || window.location.hostname=="www.facebook.com"){
@@ -288,7 +288,6 @@ function adblock_run(){
         var newel = document.createElement('div');
         newel.innerHTML = '<div style="font-family: -apple-system, BlinkMacSystemFont, sans-serif, \'Open Sans\', Helvetica, Arial;width:calc(100% - 10px) !important;border-radius: 6px !important;font-weight: 600 !important;font-size: 13px !important;margin: 0px auto !important;max-width: 400px !important;color: rgb(255,255,255) !important;text-align: center !important;background: rgb(243, 85, 85) !important;margin-top:5px !important;margin-bottom:5px !important;padding: 5px !important;">We blocked an ad for you...</div>';
         query.parentNode.replaceChild(newel, query);
-        console.log("Adblock: Blocked ad element " + theelm + " from showing.");
       });
     }
   });
