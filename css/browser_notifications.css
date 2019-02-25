@@ -13,7 +13,7 @@
 	padding: 10px;
 	border-radius: 9px;
 	color:#555555;
-  background: rgba(255,255,255);
+  background: rgb(255,255,255);
   box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
   overflow: hidden;
 }
