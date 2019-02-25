@@ -63,7 +63,7 @@ function init() {
     api: blaze_api
   };
 
-  setTimeout(function(){ adblock_run(); }, 5500);
+  setTimeout(function(){ adblock_run(); }, 1000);
 }
 
 async function blaze_api(action,arg,callback){
@@ -266,22 +266,31 @@ window.addEventListener('contextmenu', function (e) {
 //########################################### Ad Blocker for elements
 //###########################################
 
-var blocked_elements=array(".blaze-neverfindme");
-if (window.location.hostname=="twitter.com"){
+var blocked_elements=[".blaze-neverfindme"];
+if (window.location.hostname=="twitter.com" || window.location.hostname=="www.twitter.com"){
   blocked_elements.push(".promoted-tweet");
 }
 
+if (window.location.hostname=="facebook.com" || window.location.hostname=="www.facebook.com"){
+  blocked_elements.push(".ego_section");
+}
+
+if (window.location.hostname=="youtube.com" || window.location.hostname=="www.youtube.com"){
+  blocked_elements.push("#ad-iframe");
+}
+
 function adblock_run(){
-  for(var ir = 0; ir < blocked_elements.length; ir++) {
-    var theelm=blocked_elements[ir];
-    var checkfor =document.querySelectorAll(theelm);
+  blocked_elements.forEach(theelm => {
+    var checkfor=document.querySelectorAll(theelm);
     if (checkfor.length>=1){
-      for(var i = 0; i < checkfor.length; i++) {
-        //checkfor[i]
-        checkfor[i].parentNode.removeChild(checkfor[i]);
+      checkfor.forEach(query => {
+        //query.parentNode.removeChild(query);
+        var newel = document.createElement('div');
+        newel.innerHTML = '<div style="font-family: -apple-system, BlinkMacSystemFont, sans-serif, \'Open Sans\', Helvetica, Arial;width:100% !important;border-radius: 6px !important;font-weight: 600 !important;font-size: 13px !important;margin: 0px auto !important;max-width: 400px !important;color: rgb(255,255,255) !important;text-align: center !important;background: rgb(243, 85, 85) !important;padding: 10px !important;">We blocked an ad for you...</div>';
+        query.parentNode.replaceChild(newel, query);
         console.log("Adblock: Blocked ad element " + theelm + " from showing.");
-      }​
+      });
     }
-  }
-  setTimeout(function(){ adblock_run(); }, 5500);
+  });
+  setTimeout(function(){ adblock_run(); }, 8000);
 }

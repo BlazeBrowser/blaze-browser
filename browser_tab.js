@@ -462,6 +462,11 @@ function browser_url_goto(url){
   webview.src = url;
 }
 
+function browser_open_developertools(){
+  var webview = document.querySelector("#browser_webview_" + tabs_current + "");
+  webview.openDevTools();
+}
+
 function browser_webview_console_message(event,webview,tab_instance_id){
    //console.log('Guest page logged a message:', event.message)
 }

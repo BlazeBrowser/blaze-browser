@@ -325,5 +325,6 @@ document.onkeydown = function(e) {
   if (command==true && key=="i"){
     e.preventDefault();
     remote.getCurrentWindow().toggleDevTools();
+    browser_open_developertools();
   }
 };
