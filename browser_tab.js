@@ -28,7 +28,7 @@ function browser_tab_new(url,selecturl,background){
   if (useragent_platform=="win32"){ useragent_platform="Windows"; }
   var useragent_version=os.release();
 
-  var system_useragent="Mozilla/5.0 (" + useragent_platform + " " + useragent_version + ") AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.42 Safari/537.36 Blaze/1.1.43";
+  var system_useragent="Mozilla/5.0 (" + useragent_platform + " " + useragent_version + ") AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 Blaze/1.1.44";
 
   //Generate new empty tab to use
   var tab_instance_id=browser_tab_get_empty();
